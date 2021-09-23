@@ -1,0 +1,46 @@
+//Mixins
+@mixin transitionEffect($par){
+  transition: $par all;
+  -webkit-transition: $par all;
+  -moz-transition: $par all;
+  -o-transition: $par all;
+}
+@mixin centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//color
+$bg-color-1 :#111;
+$bg-color-2: #1d1d1d;
+$bg-color-3: #000;
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bg-color-1;
+  @include centerFlex;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container{
+  @include centerFlex;
+  flex-wrap: wrap;
+  max-width: 400px ;
+}
+.square{
+  background-color: $bg-color-2;
+  box-shadow: 0 0 2px $bg-color-3;
+  height: 16px;
+  width: 16px;
+  margin: 2px;
+  transition: 2s ease;
+}
+.square:hover{
+  transition-duration: 0s;
+}
